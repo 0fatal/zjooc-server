@@ -13,7 +13,8 @@ RUN sed -i s@/security.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
 COPY ./requirements.txt /requirements.txt
 
 WORKDIR /
-RUN pip3 install -r requirements.txt
+RUN pip3 install --upgrade pip
+RUN pip install -r requirements.txt
 
 COPY . /
 CMD ["gunicorn", "app:app", "-c", "./gunicorn.conf.py"]
