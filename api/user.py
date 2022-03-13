@@ -11,7 +11,8 @@ def login():
     try:
         username = request.get_json()['username']
         password = request.get_json()['password']
-    except:
+    except Exception as e:
+        print(e)
         return make_json_fail('wrong username or password')
 
     try:
