@@ -25,3 +25,16 @@ jobs:
           push: true
           tags: |
             zacharywin/zjooc-server:latest
+      - name: executing remote ssh commands
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SECRET }}
+          port: ${{ secrets.DEPLOY_PORT }}
+          script: |
+            sudo docker pull zacharywin/zjooc-server
+            sudo docker stop zjooc-server
+            sudo docker rm zjooc-server
+            sudo docker run -itd -p 7001:7001 --name=zjooc-server --restart=always zacharywin/zjooc-server
+
