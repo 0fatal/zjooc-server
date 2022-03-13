@@ -75,9 +75,12 @@ class ZJOOC:
         headers['TimeDate'] = timestamp
         return headers
 
-    def __init__(self,loginName,password):
+    @classmethod
+    def account(cls,loginName,password):
+        self = cls('')
         self.loginName = loginName
         self.password = password
+        return self
 
     def __init__(self,cookie):
         self.cookie = cookie

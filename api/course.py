@@ -20,11 +20,11 @@ def get_course_list():
 @courseApi.get('/info/<course_id>')
 @login_required
 def get_course_info(course_id):
-    # try:
+    try:
         zj = ZJOOC(cookie=get_token())
         return make_json_success(zj.getCourseInfoBrief(course_id))
-    # except:
-        # return make_json_fail('fail')
+    except:
+        return make_json_fail('fail')
     
 
 
