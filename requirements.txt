@@ -1,3 +1,4 @@
+opencv-python-headless==4.5.5.64
 certifi==2021.10.8
 charset-normalizer==2.0.12
 click==8.0.4
@@ -16,7 +17,6 @@ Jinja2==3.0.3
 MarkupSafe==2.0.1
 numpy==1.19.5
 onnxruntime==1.10.0
-opencv-python==4.5.5.64
 Pillow==8.4.0
 pipreqs==0.4.11
 pkg_resources==0.0.0
