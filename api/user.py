@@ -11,16 +11,17 @@ def login():
     try:
         username = request.get_json()['username']
         password = request.get_json()['password']
-    except:
+    except Exception as e:
+        print(e)
         return make_json_fail('wrong username or password')
 
     try:
-        zj = ZJOOC(username,password)
+        zj = ZJOOC.account(username,password)
         cookies = zj.doLogin()
     except:
         return make_json_fail('login fail')
 
-    resp = make_response(make_json_success(None),mimetype='application/json')
+    resp = make_response(make_json_success(None))
     set_token(resp, cookies)
 
     return resp
