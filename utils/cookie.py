@@ -4,8 +4,13 @@ from flask import Response, make_response, request
 def get_token() -> str:
     c1 = request.cookies.get('atoken')
     c2 = request.cookies.get('lano.connect.sid')
+    c3 = request.headers.get('Authorization')
     if c1 is None or c2 is None:
-        return ''
+        if c3 is None:
+            return ''
+        else:
+            return c3
+    
     return f'atoken={c1}; lano.connect.sid={c2}'
 
 
