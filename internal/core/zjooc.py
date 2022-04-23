@@ -153,7 +153,7 @@ class ZJOOC:
             'params[pageSize]': 20,
             'params[paperType]': paperType,
             'params[courseId]': courseId,
-            'params[processStatus]':'', 
+            'params[processStatus]':0, 
             'params[batchKey]': '',
         }
 
