@@ -36,5 +36,5 @@ jobs:
             sudo docker pull zacharywin/zjooc-server
             sudo docker stop zjooc-server
             sudo docker rm zjooc-server
-            sudo docker run -itd -p 7001:7001 --name=zjooc-server --restart=always zacharywin/zjooc-server
+            sudo docker run -d -p 8087:8087 --restart=always -e PYTHONIOENCODING=utf-8 -e LANG=C.UTF-8 --name=zjooc-server zacharywin/zjooc-server
 

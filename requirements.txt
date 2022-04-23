@@ -15,3 +15,4 @@ Pillow==8.4.0
 protobuf==3.19.4
 PyExecJS==1.5.1
 requests==2.27.1
+flask-cors==3.0.10
